@@ -19,7 +19,7 @@ namespace Cobweb\Expressions\Exception;
  *
  * @author Francois Suter (Cobweb) <typo3@cobweb.ch>
  * @package TYPO3
- * @subpackage tx_tesseract
+ * @subpackage tx_expressions
  */
 class Exception extends \Exception {
 }

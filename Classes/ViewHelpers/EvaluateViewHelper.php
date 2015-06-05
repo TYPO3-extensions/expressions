@@ -48,7 +48,7 @@ use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
  * = Examples =
  *
  * Assuming that namespace has been declared as follows:
- * {namespace expression = Tx_Expressions_ViewHelpers}
+ * {namespace expression = Cobweb\Expressions\ViewHelpers}
  *
  * <code title="Simple string with expression to evaluate">
  * <expression:evaluate>Current page id is \{tsfe:id\}</expression:evaluate>

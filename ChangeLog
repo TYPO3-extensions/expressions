@@ -1,6 +1,7 @@
 2015-06-05 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
 	* Moved to namespaces, verified compatibility with TYPO3 CMS 7, resolves #67305
+	* Moved documentation to reST, resolves #67314
 
 2015-05-09 Francois Suter (Cobweb)  <typo3@cobweb.ch>
 
