@@ -1,19 +1,21 @@
 <?php
+namespace Cobweb\Expressions\ViewHelpers;
 
-/*                                                                        *
- * This script is part of the TYPO3 project - inspiring people to share!  *
- *                                                                        *
- * TYPO3 is free software; you can redistribute it and/or modify it under *
- * the terms of the GNU General Public License version 2 as published by  *
- * the Free Software Foundation.                                          *
- *                                                                        *
- * This script is distributed in the hope that it will be useful, but     *
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHAN-    *
- * TABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General      *
- * Public License for more details.                                       *
- *                                                                        */
+/*
+ * This file is part of the TYPO3 CMS project.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
+ */
 
-require_once(t3lib_extMgm::extPath('expressions', 'class.tx_expressions_parser.php'));
+use Cobweb\Expressions\ExpressionParser;
+use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
  * This class is a Expressions view helper for the Fluid templating engine.
@@ -67,33 +69,29 @@ require_once(t3lib_extMgm::extPath('expressions', 'class.tx_expressions_parser.p
  *
  * @package TYPO3
  * @subpackage tx_expressions
- * @version $Id$
+ * @author Fabien Udriot <fabien.udriot@ecodev.ch>
+ * @author Francois Suter <typo3@cobweb.ch>
  */
-class Tx_Expressions_ViewHelpers_EvaluateViewHelper extends Tx_Fluid_Core_ViewHelper_AbstractViewHelper {
+class EvaluateViewHelper extends AbstractViewHelper {
 
 	/**
-	 * Evaluates expression throughout the Expression Parser
+	 * Evaluates expression throughout the Expression Parser.
 	 *
 	 * @param string $expression Expression to be evaluated
 	 * @return string the evaluated string.
-	 * @author Fabien Udriot <fabien.udriot@ecodev.ch>
-	 * @author Francois Suter <typo3@cobweb.ch>
-	 * @api
 	 */
 	public function render($expression = NULL) {
 		if ($expression === NULL) {
 			$expression = $this->renderChildren();
 		};
-			// Replace escaped curly braces
+		// Replace escaped curly braces
 		$searches[] = '\{';
 		$replaces[] = '{';
 		$searches[] = '\}';
 		$replaces[] = '}';
 		$expression = str_replace($searches, $replaces, $expression);
-			// Evaluate and return
-		return tx_expressions_parser::evaluateString($expression);
+		// Evaluate and return
+		return ExpressionParser::evaluateString($expression);
 	}
 
 }
-
-?>
