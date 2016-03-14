@@ -1,0 +1,15 @@
+{
+	"name": "cobweb/expressions",
+	"type": "typo3-cms-extension",
+	"description": "A library for bringing into extensions something like TypoScript's getText function.",
+	"license": ["GPL-2.0+"],
+	"autoload": {
+		"psr-4": {
+			"Cobweb\\Expressions\\": "Classes/"
+		}
+	},
+	"replace": {
+		"expressions": "self.version",
+		"typo3-ter/expressions": "self.version"
+	}
+}
