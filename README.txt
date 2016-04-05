@@ -1,2 +1,3 @@
-
-Feel free to add some documentation or simply add a link to the online manual.
+This extension provides an API that can be used in other extensions for parsing expressions
+with a syntax very much like the getText functionality of TypoScript. Please refer to the
+documentation for more details.
