@@ -214,7 +214,7 @@ class ExpressionParser {
 						case 'gp':
 							try {
 								$returnValue = self::getValue(
-									array_merge(
+									array_merge_recursive(
 										GeneralUtility::_GET(),
 										GeneralUtility::_POST()
 									),
